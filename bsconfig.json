@@ -1,0 +1,36 @@
+{
+  "name": "bowser",
+
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "gentypeconfig": {
+    "language": "typescript",
+    "importPath": "relative",
+    "shims": {
+      "Js": "Js",
+      "Dom": "Dom",
+      "React": "ReactShim",
+      "ReactEvent": "ReactEvent",
+      "ReasonPervasives": "ReasonPervasives"
+    }
+  },
+  "bsc-flags": [ "-bs-super-errors", "-bs-no-version-header" ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": false
+    },
+       {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "namespace": true,
+  "bs-dependencies": [
+  ],
+  "bs-dev-dependencies": [  ],
+  "warnings": { "number": "-8" }
+}

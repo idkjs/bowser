@@ -1,0 +1,10 @@
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open Bowser
+FLG -ppx '/Users/mando/Github/bowser-re/node_modules/bs-platform/darwin/bsc.exe -as-ppx '
+S /Users/mando/Github/bowser-re/node_modules/bs-platform/lib/ocaml
+B /Users/mando/Github/bowser-re/node_modules/bs-platform/lib/ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102-8-40-42-61
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}

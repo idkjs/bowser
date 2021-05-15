@@ -1,0 +1,13 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o Constants-Bowser.cmi : cp ../bs/src/Constants-Bowser.cmi
+o Constants-Bowser.cmj : cp ../bs/src/Constants-Bowser.cmj
+o Constants-Bowser.cmt : cp ../bs/src/Constants-Bowser.cmt
+o Constants.re : cp ../../src/Constants.re
+o Bowser.cmi : cp ../bs/Bowser.cmi
+o Bowser.cmj : cp ../bs/Bowser.cmj
+o Bowser.cmt : cp ../bs/Bowser.cmt
+build install.stamp : touch Constants-Bowser.cmi Constants-Bowser.cmj Bowser.cmi Bowser.cmj

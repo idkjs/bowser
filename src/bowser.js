@@ -6,10 +6,16 @@
  */
 import Parser from './parser.js';
 import {
-  BROWSER_MAP,
-  ENGINE_MAP,
-  OS_MAP,
-  PLATFORMS_MAP,
+  // browser_map as BROWSER_MAP,
+  engine_map as ENGINE_MAP,
+  os_map as OS_MAP,
+  platforms_map as PLATFORMS_MAP
+} from './Constants.bs';
+import {
+BROWSER_MAP,
+//  ENGINE_MAP,
+//   OS_MAP,
+// PLATFORMS_MAP
 } from './constants.js';
 
 /**
@@ -54,7 +60,7 @@ class Bowser {
    * const result = Bowser.parse(window.navigator.userAgent);
    */
   static parse(UA) {
-    return (new Parser(UA)).getResult();
+    return new Parser(UA).getResult();
   }
 
   static get BROWSER_MAP() {

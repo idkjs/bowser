@@ -39,6 +39,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-istanbul": "^6.0.0",
+    "bs-platform": "9.0.2",
     "compression-webpack-plugin": "^4.0.0",
     "coveralls": "^3.0.6",
     "docdash": "^1.1.1",
@@ -46,6 +47,7 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-ava": "^10.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "gentype": "^3.50.0",
     "gh-pages": "^3.0.0",
     "jsdoc": "^3.6.3",
     "nyc": "^15.0.0",
@@ -68,6 +70,8 @@
     "test": "test"
   },
   "scripts": {
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
     "build": "webpack --config webpack.config.js",
     "generate-and-deploy-docs": "npm run generate-docs && gh-pages --dist docs --dest docs",
     "watch": "webpack --watch --config webpack.config.js",

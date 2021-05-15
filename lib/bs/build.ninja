@@ -1,0 +1,18 @@
+rescript = 1
+cleaner = /Users/mando/Github/bowser-re/node_modules/gentype/gentype.exe
+rule astj
+  command = /Users/mando/Github/bowser-re/node_modules/bs-platform/darwin/bsc.exe -w -8 -bs-v 9.0.2 -bs-super-errors -bs-no-version-header -absname -bs-ast -o $out $i
+o src/Constants.ast : astj ../../src/Constants.re
+rule deps
+  command = /Users/mando/Github/bowser-re/node_modules/bs-platform/darwin/bsb_helper.exe -hash 654d984c5e8e56544e9206f224bd828d -bs-ns Bowser $in
+  restat = 1
+o src/Constants.d : deps src/Constants.ast
+rule mij
+  command = /Users/mando/Github/bowser-re/node_modules/bs-platform/darwin/bsc.exe -bs-ns Bowser -I . -I src -bs-super-errors -bs-no-version-header -w -8 -bs-gentype /Users/mando/Github/bowser-re/node_modules/gentype/gentype.exe -bs-package-name bowser -bs-package-output commonjs:$in_d:.bs.js -bs-package-output es6:lib/es6/$in_d:.bs.js $i
+  dyndep = 1
+  restat = 1
+o src/Constants-Bowser.cmj src/Constants-Bowser.cmi ../es6/src/Constants.bs.js ../../src/Constants.bs.js : mij src/Constants.ast
+rule build_package
+  command = /Users/mando/Github/bowser-re/node_modules/bs-platform/darwin/bsc.exe -w -49 -color always -no-alias-deps  $i
+  restat = 1
+o Bowser.cmi : build_package Bowser.mlmap
